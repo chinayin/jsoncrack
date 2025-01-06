@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Group, Select, Button } from "@mantine/core";
+import { Flex, Group, Select } from "@mantine/core";
 import styled from "styled-components";
 import toast from "react-hot-toast";
 import { AiOutlineFullscreen } from "react-icons/ai";
@@ -83,21 +83,6 @@ export const Toolbar = ({ isWidget = false }: ToolbarProps) => {
         </Group>
       )}
       <Group gap="6" justify="right" w="100%" style={{ flexWrap: "nowrap" }}>
-        {!isWidget && (
-          <Button
-            component="a"
-            href="https://todiagram.com/?utm_source=jsoncrack&utm_medium=toolbar"
-            target="_blank"
-            variant="light"
-            color="gray"
-            size="compact-sm"
-            fz="12"
-            fw="600"
-            mr="6"
-          >
-            JSON Crack v2.0 🔥
-          </Button>
-        )}
         <SearchInput />
         {!isWidget && (
           <>

@@ -5,7 +5,6 @@ import "@mantine/core/styles.css";
 import "@mantine/code-highlight/styles.css";
 import { ThemeProvider } from "styled-components";
 import { NextSeo, SoftwareAppJsonLd } from "next-seo";
-import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Toaster } from "react-hot-toast";
 import GlobalStyle from "src/constants/globalStyle";
 import { SEO } from "src/constants/seo";
@@ -50,7 +49,7 @@ const theme = createTheme({
   },
 });
 
-const IS_PROD = process.env.NODE_ENV === "production";
+//const IS_PROD = process.env.NODE_ENV === "production";
 
 function JsonCrack({ Component, pageProps }: AppProps) {
   return (
@@ -84,7 +83,6 @@ function JsonCrack({ Component, pageProps }: AppProps) {
             }}
           />
           <GlobalStyle />
-          {IS_PROD && <GoogleAnalytics trackPageViews />}
           <Component {...pageProps} />
         </ThemeProvider>
       </MantineProvider>
