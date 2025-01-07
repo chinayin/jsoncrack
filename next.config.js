@@ -59,7 +59,7 @@ const configExport = () => {
     );
   }
 
-  if (process.env.repo === "chinayin/jsoncrack") return withCustomizedConfig(config);
+  if (process.env.GITHUB_REPOSITORY === "chinayin/jsoncrack") return withCustomizedConfig(config);
 
   return config;
 };
