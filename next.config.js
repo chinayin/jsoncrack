@@ -55,7 +55,7 @@ const configExport = () => {
       }
     );
   }
-
+  console.log(process.env)
   console.log("env.repo:", process.env.repo);
   if (process.env.repo === "chinayin/jsoncrack") return withCustomizedConfig(config);
 
