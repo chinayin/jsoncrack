@@ -1,5 +1,8 @@
 FROM node:lts-alpine AS base
 
+ARG GITHUB_REPOSITORY
+ENV GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
+
 # Stage 1: Install dependencies
 FROM base AS deps
 WORKDIR /app

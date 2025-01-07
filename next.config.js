@@ -39,6 +39,9 @@ const withCustomizedConfig = (config) => {
 const configExport = () => {
   if (process.env.ANALYZE === "true") return withBundleAnalyzer(config);
 
+  console.log(process.env)
+  console.log("env.GITHUB_REPOSITORY:", process.env.GITHUB_REPOSITORY);
+
   if (process.env.GITHUB_REPOSITORY === "AykutSarac/jsoncrack.com") {
     return withSentryConfig(
       config,
@@ -55,8 +58,7 @@ const configExport = () => {
       }
     );
   }
-  console.log(process.env)
-  console.log("env.repo:", process.env.repo);
+
   if (process.env.repo === "chinayin/jsoncrack") return withCustomizedConfig(config);
 
   return config;

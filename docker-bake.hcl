@@ -24,14 +24,18 @@ target "_all_platforms" {
 }
 
 group "default" {
-  targets = ["jsoncrack"]
+  targets = ["json-crack"]
 }
 
-target "jsoncrack" {
+target "json-crack" {
   inherits = ["_all_platforms"]
   context  = "."
   tags     = [
     "${repository}:latest",
     "${repository}:${version}",
   ]
+  args = {
+    GITHUB_REPOSITORY = "${repo}"
+  }
+
 }
