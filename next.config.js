@@ -56,7 +56,8 @@ const configExport = () => {
     );
   }
 
-  if (process.env.GITHUB_REPOSITORY === "chinayin-docker/jsoncrack") return withCustomizedConfig(config);
+  console.log("env.repo:", process.env.repo);
+  if (process.env.repo === "chinayin/jsoncrack") return withCustomizedConfig(config);
 
   return config;
 };
