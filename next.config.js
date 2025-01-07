@@ -29,6 +29,13 @@ const config = {
   },
 };
 
+const withCustomizedConfig = (config) => {
+  return {
+    ...config,
+    basePath: "/json-crack",
+  };
+};
+
 const configExport = () => {
   if (process.env.ANALYZE === "true") return withBundleAnalyzer(config);
 
@@ -48,6 +55,8 @@ const configExport = () => {
       }
     );
   }
+
+  if (process.env.GITHUB_REPOSITORY === "chinayin/jsoncrack") return withCustomizedConfig(config);
 
   return config;
 };
